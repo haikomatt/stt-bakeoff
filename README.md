@@ -16,16 +16,16 @@ One shape for every vendor: an adapter turns PCM bytes into `TranscriptEvent`s.
 Everything downstream is vendor-blind, so adding a fourth engine is a file
 rather than a rewrite.
 
-- `src/adapters/` — Deepgram (US and EU bases), ElevenLabs Scribe v2 Realtime
+- `src/adapters/`: Deepgram (US and EU bases), ElevenLabs Scribe v2 Realtime
   (US and EU), Speechmatics (stub).
-- `src/channels.py` — mixed-mono against separated legs, from any file ffmpeg
+- `src/channels.py`: mixed-mono against separated legs, from any file ffmpeg
   can read, plus 300 to 3400Hz narrowband simulation for phone-quality audio.
-- `src/events.py` — append-only event log and a commit policy: interim results
+- `src/events.py`: append-only event log and a commit policy: interim results
   never commit, a committed result never silently reverts, corrections are
   first-class events, and state derives by replay.
-- `src/scorer.py` — **field-level** accuracy against a gold record. Pooled word
+- `src/scorer.py`: **field-level** accuracy against a gold record. Pooled word
   error rate hides the fields you care about.
-- `src/run_bakeoff.py` — CLI: audio times adapters times region, to a JSONL
+- `src/run_bakeoff.py`: the CLI. Audio times adapters times region, to a JSONL
   event log and a summary with partials, finals, first-final latency, and
   errors recorded as findings rather than swallowed.
 
