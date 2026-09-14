@@ -57,6 +57,19 @@ adapters carry explicit region selection because "which engine is best" and
 "may we lawfully send this audio there" are different questions, and the
 second one is usually the binding constraint.
 
+Two practical notes, correct as at September 2026.
+
+**ElevenLabs' EU endpoint is not available on a standard key.** It has to be
+enabled on your account by someone in their sales or go-to-market team. Until
+it is, a key that works perfectly well elsewhere returns an auth error against
+the EU base, which looks like a bug in your code and is not.
+
+**Deepgram's EU endpoint is early access** and has to be requested.
+
+Neither is a base URL swap. Both take a conversation rather than a settings
+change, so ask early if EU processing is a requirement rather than a
+preference.
+
 ## Licence
 
 Apache-2.0.
