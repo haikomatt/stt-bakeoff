@@ -1,0 +1,9 @@
+.venv/
+audio/*
+!audio/README.md
+runs/*
+!runs/README.md
+__pycache__/
+*.jsonl
+.env
+.pytest_cache/
